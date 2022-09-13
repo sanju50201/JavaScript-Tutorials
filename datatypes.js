@@ -21,7 +21,7 @@ let person = {
   firstName: 'Sanjith ',
   lastName: 'Kumar',
 }
-console.log(person.firstName + person.lastName) // variable.key 
+console.log(person.firstName + person.lastName) // variable.key
 
 const item = {
   Sanju: true,
@@ -54,6 +54,30 @@ let convo = 'He said "Ewwww"' // --> this is valid
 let anotherConvo = "He said 'Ewwww'" // --> this is valid
 // let yetAnotherConvo = "He said "Ewww"" // --> this is not valid
 
-let firstName = "Sanjith"
-let lastName = "Kumar"
-console.log(firstName+" "+lastName)
+let firstName = 'Sanjith'
+let lastName = 'Kumar'
+console.log(firstName + ' ' + lastName)
+// Null
+let currentUser = null
+currentUser = 'Sanjith Kumar V'
+console.log(currentUser)
+
+// Math Object --> contains a set of methods
+console.log(Math.PI)
+console.log(Math.floor(2.4657657)) // --> it chops off the decimal points
+console.log(Math.random()) // --> generates a random number
+console.log(Math.sqrt(16))
+console.log(Math.round(3.51)) // --> rounds of the number.
+console.log(Math.pow(5, 2)) // --> square of the number
+// just a program demonstrating few Math Operations
+const firstStep = Math.random()
+const secondStep = firstStep * 10
+const thirdStep = Math.floor(secondStep)
+const fourthStep = thirdStep + 1
+console.log(fourthStep)
+
+let nameOf = 'Freddy'
+console.log(typeof nameOf)
+let age = 21
+age = parseInt(age) + 1
+console.log(age)
