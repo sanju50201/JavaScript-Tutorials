@@ -129,37 +129,238 @@
 // }
 
 // 1st approach
-function cardGame() {
-  const values = [
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '10',
-    'A',
-    'J',
-    'K',
-    'Q',
-  ]
-  //  the below is for the first array
-  // const valIdx = Math.floor(Math.random() * values.length)
-  // const value = values[valIdx]
-  // the below is for the second array with suits
-  // const suIdx = Math.floor(Math.random() * suits.length)
-  // const suit = suits[suIdx]
-  // returning the object
-  const value = pick(values)
-  const suits = ['Spades', 'Diamonds', 'Hearts', 'Clubs']
-  const suit = pick(suits)
-  return { value: value, suit: suit }
+// function cardGame() {
+//   const values = [
+//     '2',
+//     '3',
+//     '4',
+//     '5',
+//     '6',
+//     '7',
+//     '8',
+//     '9',
+//     '10',
+//     'A',
+//     'J',
+//     'K',
+//     'Q',
+//   ]
+//  the below is for the first array
+// const valIdx = Math.floor(Math.random() * values.length)
+// const value = values[valIdx]
+// the below is for the second array with suits
+// const suIdx = Math.floor(Math.random() * suits.length)
+// const suit = suits[suIdx]
+// returning the object
+//   const value = pick(values)
+//   const suits = ['Spades', 'Diamonds', 'Hearts', 'Clubs']
+//   const suit = pick(suits)
+//   return { value: value, suit: suit }
+// }
+
+// // 2nd approach
+// function pick(arr) {
+//   const idx = Math.floor(Math.random() * arr.length)
+//   return arr[idx]
+// }
+/**
+ Scope --> variable visibility, where we have access to the variable
+ types of scopes:
+ function scope --> the variable will be accessible only within the function 
+   
+ */
+
+// function lol() {
+//   let name = 'Sanjith'
+//   var age = 22
+//   const color = 'green'
+//   console.log(color, age, name) // the variables can be accessed within the function
+// }
+
+// let character = 'Naruto'
+// function animeCharacters() {
+//   let character = 'Sasuke'
+//   console.log(character)
+// }
+// animeCharacters()
+// console.log(character)
+
+// if (true) {
+//   let animal = 'Tiger'
+// }
+// console.log(animal)
+// Block Scope
+// function doubleArr(arr) {
+//   const result = []
+//   let double
+//   for (num of arr) {
+//     double = num * 2
+//     double = result.push(double)
+//   }
+//   return result
+// }
+
+// Lexical Scope
+// a variable declared in one function is available in the nested function in it.
+// function outer() {
+//   let movie = 'Departed'
+//   function inner() {
+//     let movie = 'End game'
+//     console.log(movie.toUpperCase())
+//   }
+//   inner()
+// }
+
+// function outer() {
+//   // let movie = 'Departed'
+//   function inner() {
+//     let movie = 'End game'
+//     function extraInner() {
+//       // let movie = 'Star Wars'
+//       console.log(movie.toUpperCase())
+//     }
+//     extraInner()
+//   }
+//   inner()
+// }
+
+// function Expression --> this function is stored in a variable and the function doesn't have a name
+
+// anonymous function
+// const add = function (x, y) {
+//   return x + y
+// }
+// // named function
+// const product = function multiply(x, y) {
+//   return x * y
+// }
+
+// function add(x, y) {
+//   return x + y
+// }
+// const subtract = function (x, y) {
+//   return x - y
+// }
+// function multiply(x, y) {
+//   return x * y
+// }
+// const divide = function (x, y) {
+//   return x / y
+// }
+// // calling the above functions using an array like below
+// const operations = [add, subtract, multiply, divide]
+
+// using a for of loop
+// for (func of operations) {
+//   let result = func(30, 5)
+//   console.log(result)
+// }
+
+// const thing = {
+//   doSomething: multiply,
+//   doSomethingElse: divide,
+// }
+// Higher order functions --> operates with or on other functions
+
+// function callThreeTimes(func) {
+//   func()
+//   func()
+//   func()
+// }
+
+// function sad() {
+//   console.log("I'M SAD!")
+// }
+// function angry() {
+//   console.log("I'M SO PISSED!")
+// }
+// function happy() {
+//   console.log("I'M HAPPY!")
+// }
+// // callThreeTimes(cry) --> we are passing a function inside a function
+
+// function repeatNTimes(action, num) {
+//   for (i = 0; i < num; i++) {
+//     action()
+//   }
+// }
+// repeatNTimes(angry, 3)
+
+// random number picker function
+// in this below function each time a random function gets picked and returns
+// function pickRandom(f1, f2) {
+//   let rand = Math.random()
+//   console.log(rand)
+//   if (rand < 0.5) {
+//     f1()
+//   } else {
+//     f2()
+//   }
+// }
+
+// the function accepts the other functions arguments
+
+// function multiplyBy(num) {
+//   return function (x) {
+//     return (num *= x)
+//   }
+// }
+// const double = multiplyBy(2)
+// const triple = multiplyBy(3)
+
+// function numInBetween(x, y) {
+//   return function (num) {
+//     if (x <= num && y >= num) {
+//       return true
+//     }
+//     return false
+//   }
+// }
+// const displayNumber = numInBetween(0, 18)
+// const isGenZ = numInBetween(2001, 2022)
+
+// Callbacks --> a function in an another function is returned with an argument which is invoked outer function
+
+// function greetMessage() {
+//   alert('Hello!')
+// }
+// // setTimeout(greetMessage, 5000) // inbuilt function
+
+// // setTimeout(function () {
+// //   alert('WELCOME!')
+// // }, 6000)
+
+// const btn = document.querySelector('button')
+// btn.addEventListener('click', function () {
+//   alert('JUST TO TEST IT!')
+// })
+/**
+ Hoisting --> When a variable is declared it gets assigned first, 
+ even if it does not store a value, so when you print out the 
+ variable you will still get the output, which do not 
+ contain the value, but it'll be undefined
+ */
+
+// using var -- hoisted
+// console.log(animal)
+// var animal = 'Tiger'
+// using let -- not hoisted
+// console.log(bird)
+// let bird = 'Parrot'
+// using const -- not hoisted
+// console.log(fish)
+// const fish = 'Betta'
+
+// using functions -- hoisted
+
+bark()
+function bark() {
+  console.log('BOWWWW!')
 }
 
-// 2nd approach
-function pick(arr) {
-  const idx = Math.floor(Math.random() * arr.length)
-  return arr[idx]
+// using function expressions -- not hoisted
+console.log(hoot) // so javascript knows it, but it is undefined
+hoot()
+var hoot = function () {
+  console.log('HOOO HOO! ')
 }
